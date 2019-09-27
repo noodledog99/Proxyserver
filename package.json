@@ -1,0 +1,29 @@
+{
+  "name": "testproxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "absolutify": "^0.1.0",
+    "colors": "^1.4.0",
+    "connect": "^3.7.0",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.5.1",
+    "express-pipeline": "1.1.0",
+    "http-proxy": "^1.18.0",
+    "install": "^0.13.0",
+    "npm": "^6.11.3",
+    "puppeteer": "^1.20.0",
+    "request": "^2.88.0",
+    "url-parse": "^1.4.7",
+    "vhost": "^3.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.1"
+  }
+}
