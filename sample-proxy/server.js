@@ -56,10 +56,10 @@ var appPipeline = pipe([
 //     loadAppTwo
 // ]);
 
-app1.get('/app/', appPipeline);
-app2.get('/app/', appPipeline);
+app1.get('/', appPipeline);
+app2.get('/', appPipeline);
 
-app.use(vhost('abc.mana.com', app1))
-app.use(vhost('dfg.mana.com', app2))
+app.use(vhost('abc.localhost', app1))
+app.use(vhost('dfg.localhost', app2))
 
 app.listen(PORT);
