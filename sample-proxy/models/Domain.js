@@ -1,17 +1,15 @@
 const mongoose = require('mongoose');
-
-const domainSchema = mongoose.Schema({
-    domainName: String,
-    urlWeb: String
+const Schema = mongoose.Schema;
+const domainSchema = new Schema({
+    domainName: {
+        type: String,
+        required: true
+    },
+    urlWeb: {
+        type: String,
+        required: true
+    }
 });
 
-// const domainSchema = mongoose.Schema({
-//     id: {
-//         type : String,
-//         default : uniqid()
-//     },
-//     domainName: String,
-//     urlWeb: String
-// });
-
-module.exports = mongoose.model('Domain', domainSchema)
+var modelDomain = mongoose.model('Domain', domainSchema);
+module.exports = modelDomain;

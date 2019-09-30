@@ -36,20 +36,30 @@ router.post('/createDomain', async (req, res) => {
     //     });
 });
 //get specific
-router.get('/getdomain/:nameDomain', async (req, res) => {
+router.get('/getdomain/:id', async (req, res) => {
     try {
-        console.log(req.params.nameDomain);
-        const post = await domainModel.findById(req.params.nameDomain);
+        console.log(req.params.id);
+        const post = await domainModel.findOne({ _id: req.params.id });
         res.json(post);
     } catch (err) {
         res.json({ message: err });
     }
 
 });
+
+router.get('/getDomain2/:dmName', async (req, res) => {
+    try {
+        const post = await domainModel.findOne({ domainName: req.params.dmName });
+        res.json(post);
+    }
+    catch (err) {
+        res.json({ messageErrWa: err });
+    }
+});
 //delete
 router.delete('/delete/:id', async (req, res) => {
     try {
-        const remove = await domainModel.remove({ _id: req.params.id });
+        const remove = await domainModel.deleteOne({ _id: req.params.id });
         res.json(remove);
     } catch (err) {
         res.json({ message: err });
