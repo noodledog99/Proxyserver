@@ -1,0 +1,24 @@
+{
+  "name": "sampleproxyserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "absolutify": "^0.1.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-pipeline": "^1.1.0",
+    "mongoose": "^5.7.1",
+    "nodemon": "^1.19.3",
+    "puppeteer": "^1.20.0",
+    "uuid": "^3.3.3",
+    "vhost": "^3.0.2"
+  }
+}
