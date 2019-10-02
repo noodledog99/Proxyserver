@@ -9,6 +9,7 @@ const axService = new Services();
 
 const serverOne = express();
 const serverTwo = express();
+const serverThree = express();
 const appServer = express();
 
 //SET port for running server
@@ -38,8 +39,10 @@ var appPipeline = pipe([
 
 serverOne.get('/', appPipeline);
 serverTwo.get('/', appPipeline);
+serverThree.get('/', appPipeline);
 
 appServer.use(vhost('abc.localhost', serverOne));
 appServer.use(vhost('dfg.localhost', serverTwo));
+appServer.use(vhost('636897857827711431.mana.com', serverThree));
 
 appServer.listen(appServer.get('port'));
