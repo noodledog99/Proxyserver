@@ -17,7 +17,9 @@ appServer.set('port', process.env.PORT || 3000);
 
 var loadApp = async function (req, res) {
     let prefixName = req.hostname.split('.')[0];
+    console.log(`req.hostname : ${req.hostname}`);
     const urlInfo = await axService.getUrl(prefixName);
+
     if (!req.query.url) {
         req.query.url = urlInfo.data[0].url;
     }
@@ -38,11 +40,12 @@ var appPipeline = pipe([
 ]);
 
 serverOne.get('/', appPipeline);
-serverTwo.get('/', appPipeline);
-serverThree.get('/', appPipeline);
+// serverTwo.get('/', appPipeline);
+// serverThree.get('/', appPipeline);
 
-appServer.use(vhost('abc.localhost', serverOne));
-appServer.use(vhost('dfg.localhost', serverTwo));
-appServer.use(vhost('636897857827711431.mana.com', serverThree));
+// appServer.use(vhost(`*.${req.hostname.split('.')[1]}`, serverOne));
+appServer.use(vhost('*.localhost', serverOne));
+// appServer.use(vhost('dfg.localhost', serverTwo));
+// appServer.use(vhost('636897857827711431.localhost', serverThree));
 
 appServer.listen(appServer.get('port'));
